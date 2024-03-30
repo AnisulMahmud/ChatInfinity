@@ -1,8 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.route.js';
+import messageRoutes from './routes/message.route.js';
 import { connect } from 'mongoose';
 import connectToMongoDB from './db/connectMongoDB.js';
+import cookieParser from 'cookie-parser';
 
 
 const app = express();
@@ -10,16 +12,16 @@ dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 
-// app.get('/', (req, res) => {
-//     res.send('Hello World!!!!');
-// })
+
 
 // to use json data in the body of the request
 app.use(express.json());
+app.use(cookieParser()); // calling this middleware to access the cookies
 
-// routes for authentication-> we will create a middleware for this, so that we can use it in any route
+// routes for all Routes
 
 app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
 
 
 

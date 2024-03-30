@@ -6,3 +6,6 @@ This is a real-time chat web applciation built using NodeJs and ReactJs. It is a
 soket.io
 mongoDb
 express and node js
+
+
+Message Model and message controller, to get and sent messages
