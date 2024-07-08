@@ -20,3 +20,5 @@ The frontend of this application is built using the following technologies:
 - **TailwindCSS**: TailwindCSS is a utility-first CSS framework. Instead of pre-designed components, Tailwind provides low-level utility classes that let you build completely custom designs. In this application, TailwindCSS is used for styling the components and creating a responsive design.
 
 - **daisyUI**: daisyUI is a plugin for Tailwind CSS that adds new functionalities and components. It extends the utility of TailwindCSS by providing additional components and themes. In this application, daisyUI is used to enhance the UI design and user experience.
+
+- **Zustand**: Zustand is a state management library for React and other JavaScript frameworks. It provides a simple and intuitive way to create and manage global state in a React application. 
