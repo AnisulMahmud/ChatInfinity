@@ -1,20 +1,37 @@
 import React from "react";
+import { useAuthContext } from "../../context/AuthContext";
+import useConversation from "../../store/useConversation";
 
-const Message = () => {
+const Message = ({ message }) => {
+  const { user } = useAuthContext();
+  const { selectedConversation } = useConversation();
+  const myMessage = message.senderId === user._id;
+  const chatClass = myMessage ? "chat-end" : "chat-start";
+  const profilePic = myMessage ? user.profilePicture : selectedConversation.profilePicture;
+  const messageColor = myMessage ? "bg-blue-500" : "bg-gray-500";
+  const messageSendingTime = extractTime(message.createdAt);
   return (
-    <div className="chat chat-end">
+    <div className={`chat ${chatClass}`}>
       <div className="chat-image avatar">
-        <div className="w-8 rounded-l">
-          <img
-            alt="Tailwind CSS chat bubble component"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-          />
+        <div className="w-8 rounded">
+          <img src={profilePic} />
         </div>
       </div>
-      <div className={"chat-bubble text-white bg-blue-300"}>Holla!</div>
-      <div className="chat-footer opacity-50 text-xs flex gap-1">12:42</div>
+      <div className={`chat-bubble text-white ${messageColor} pb-2`}>{message.message}</div>
+      <div className="chat-footer opacity-50 text-xs flex gap-1">{messageSendingTime}</div>
     </div>
   );
 };
 
 export default Message;
+
+function extractTime(dateString) {
+  const date = new Date(dateString);
+  const hours = paddingZero(date.getHours());
+  const minutes = paddingZero(date.getMinutes());
+  return `${hours}:${minutes}`;
+}
+
+function paddingZero(number) {
+  return number.toString().padStart(2, "0");
+}

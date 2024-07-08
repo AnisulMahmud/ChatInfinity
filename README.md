@@ -22,3 +22,25 @@ The frontend of this application is built using the following technologies:
 - **daisyUI**: daisyUI is a plugin for Tailwind CSS that adds new functionalities and components. It extends the utility of TailwindCSS by providing additional components and themes. In this application, daisyUI is used to enhance the UI design and user experience.
 
 - **Zustand**: Zustand is a state management library for React and other JavaScript frameworks. It provides a simple and intuitive way to create and manage global state in a React application. 
+
+
+
+
+
+
+
+
+Signup
+
+![alt text](image.png)
+
+Log in
+
+![alt text](image-1.png)
+
+HomePage
+
+
+Chating
+
+![alt text](image-2.png)
