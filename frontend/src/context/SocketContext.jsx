@@ -16,7 +16,9 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      const socket = io("http://localhost:5000", {
+      // const socket = io("http://localhost:5000", {
+      // for deployment
+      const socket = io("https://chatinfinity.onrender.com", {
         query: {
           userId: user._id,
         },
