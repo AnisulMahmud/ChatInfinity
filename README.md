@@ -6,6 +6,9 @@ This is a real-time chat web applciation built using NodeJs and ReactJs. It is a
 soket.io
 mongoDb
 express and node js
+React
+daisy UI
+jsonwebtoken
 
 
 Message Model and message controller, to get and sent messages
@@ -40,7 +43,12 @@ Log in
 
 HomePage
 
+![alt text](image-4.png)
 
-Chating
+![alt text](image-5.png)
 
-![alt text](image-2.png)
+Chating from both side
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)

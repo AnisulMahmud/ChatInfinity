@@ -11,7 +11,9 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-
+export const getReciverSocketId = (receiverId) => {
+  return userSocket[receiverId];
+};
 const userSocket = {};
 
 io.on("connection", (socket) => {
